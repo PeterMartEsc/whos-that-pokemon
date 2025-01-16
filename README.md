@@ -10,7 +10,7 @@ La aplicación la realizaremos en Vue, con el template de TypeScript. Usaremos C
 
 - [Reto 1 - Iniciando Proyecto Pokemon Game](#r1)
 
-- [Reto 2 -]()
+- [Reto 2 -](#r2)
 
 ### Reto 1 - Iniciando Proyecto Pokemon Game <a name="r1"></a>
 
@@ -96,3 +96,35 @@ A continuación borraremos y modificaremos todo lo que no necesitamos que nos ha
 
 Finalmente, configuraremos el proyecto para usar el framework de CSS __TailwindCSS__:
 
+```bash
+    npm install -D tailwindcss postcss autoprefixer
+    npx tailwindcss init -p
+```
+
+Editamos el `tailwind.config.js` para que se vea de la siguiente forma:
+
+<img src="./capturas/Reto-1/tailwind-1.png">
+
+Añadimos un archivo `index.css` en la ruta `pokemon-gesser/src/assets` con el siguiente contenido:
+
+<img src="./capturas/Reto-1/tailwind-2.png">
+
+Añadimos un classname al componente de `hello world` de la siguiente forma: 
+
+Y ejecutamos el proyecto de nuevo con `npm run dev`
+
+Finalmente comprobamos el mensaje de __Hello World__ para ver si ha cambiado:
+
+<img src="./capturas/Reto-1/6.png">
+
+Si se ve así, hemos realizado el reto 1 correctamente.
+
+<div align=center>
+    <img src="./capturas/others/kenny.jpg" width="100">
+</div>
+
+### Reto 2 - Estructura de la aplicación <a name="r2"></a>
+
+Continuamos por donde lo dejamos en la práctica anterior. En el reto anterior vimos el concepto de `screaming architecture` y hoy vamos a darle esa estructura a nuestro proyecto.
+
+La idea es que, al observar la __estructura del código__, los nombres de las __carpetas__, los __módulos__ o las __clases__, sea evidente qué hace el sistema o cuál es su propósito principal.

@@ -15,9 +15,9 @@ export default defineComponent({
 
 <template>
 
-  <div>
-    <h1>{{ message }}</h1>
-  </div>
+  <h1 className="text-3xl font-bold underline">
+    {{ message }}
+  </h1>
 
 </template>
 
