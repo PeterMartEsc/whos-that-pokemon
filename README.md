@@ -8,13 +8,21 @@ La aplicación la realizaremos en Vue, con el template de TypeScript. Usaremos C
 
 ### Índice
 
-- [Reto 1 - Iniciando Proyecto Pokemon Game](#r1)
+- [Reto 1 - Iniciando Proyecto 'Pokemon Game'](#r1)
 
-- [Reto 2 -](#r2)
+- [Reto 2 - Estructura de la Aplicación](#r2)
 
 ### Reto 1 - Iniciando Proyecto Pokemon Game <a name="r1"></a>
 
-Empezaremos creando el proyecto con
+<div align=center>
+    <img src="./capturas/others/greninja.gif" width="150">
+    <img src="./capturas/others/suicune.gif" width="100">
+    <img src="./capturas/others/arceus.gif" width="160">
+</div>
+
+<br>
+
+Empezaremos creando el proyecto con:
 
 ```bash
     npm create vue@latest 
@@ -26,15 +34,15 @@ Y configuramos el proyecto como queremos:
 
 > __Pregunta 1__: ¿Para qué sirve Vue Router, Pinia, Vitest, ESLint y Prettier? Responde a esta pregunta en el README del repositorio del proyecto.
 
-__Vue Router__: utilidad para crear `rutas` en __Vue__. Configuramos en un fichero las rutas deseadas y los componentes a los que están asociados.
+> __Vue Router__: utilidad para crear `rutas` en __Vue__. Configuramos en un fichero las rutas deseadas y los componentes a los que están asociados.
 
-__Pinia__: reduce la complejidad al trabajar con __Vue__ y el `Composition API` en aplicaciones ligeras. Entre otras cosas, trabaja con `stores` en vez de `modulos` y tiene mejor soporte para __TypeScript__.
+> __Pinia__: reduce la complejidad al trabajar con __Vue__ y el `Composition API` en aplicaciones ligeras. Entre otras cosas, trabaja con `stores` en vez de `modulos` y tiene mejor soporte para __TypeScript__.
 
-__Vitest__: biblioteca para la realización de `test unitarios` de aplicaciones de __Vue__.
+> __Vitest__: biblioteca para la realización de `test unitarios` de aplicaciones de __Vue__.
 
-__ESLint__: plugin que nos permite verificar los `<template>`, `<script>` y el codigo de los `.js` de __Vue__. Este encuentra errores en la sintaxis, usos incorrectos de directivas y violaciones en la Guía de estilos  de __Vue__.
+> __ESLint__: plugin que nos permite verificar los `<template>`, `<script>` y el codigo de los `.js` de __Vue__. Este encuentra errores en la sintaxis, usos incorrectos de directivas y violaciones en la Guía de estilos  de __Vue__.
 
-__Prettier__: ayuda a darle un formato uniforme al codigo. Lo hace mucho más legible bajo una serie de configuraciones definidas.
+> __Prettier__: ayuda a darle un formato uniforme al codigo. Lo hace mucho más legible bajo una serie de configuraciones definidas.
 
 
 Continuando con el codigo, procedemos a iniciar el proyecto para comprobar que funciona correctamente:
@@ -50,7 +58,7 @@ Como hemos dicho nuestro Pokemon Game lo vamos a realizar siguiendo `Composition
 
 > __Pregunta 2.1__: ¿Qué es Composition API y en qué se diferencia de Option API en VueJS?
 
-__Composition API__:  es una forma mejorada para realizar las aplicaciones a partir de Vue 3. Está diseñado de forma que el proyecto tenga una alta escalabilidad, es decir, que se pueda mejorar y que sus componentes sean reutilizables.
+> __Composition API__:  es una forma mejorada para realizar las aplicaciones a partir de Vue 3. Está diseñado de forma que el proyecto tenga una alta escalabilidad, es decir, que se pueda mejorar y que sus componentes sean reutilizables.
 
 <img src="./capturas/Reto-1/options-api-composition-api.png">
 
@@ -58,7 +66,7 @@ Imagen obtenida de la web de [Manz.Dev](https://lenguajejs.com/vuejs/componentes
 
 > __Pregunta 2.2__: ¿Qué es screaming architecture y qué ventajas tiene?
 
-__Screaming architecture__: es un tipo de arquitectura cuyo objetivo es que la estructura principal del código base transmita de inmediato el propósito de la aplicación.
+> __Screaming architecture__: es un tipo de arquitectura cuyo objetivo es que la estructura principal del código base transmita de inmediato el propósito de la aplicación.
 
 Por ejemplo:
 
@@ -125,6 +133,41 @@ Si se ve así, hemos realizado el reto 1 correctamente.
 
 ### Reto 2 - Estructura de la aplicación <a name="r2"></a>
 
+<div align=center>
+    <img src="./capturas/others/greninja.gif" width="150">
+    <img src="./capturas/others/suicune.gif" width="100">
+    <img src="./capturas/others/arceus.gif" width="160">
+</div>
+
+<br>
+
 Continuamos por donde lo dejamos en la práctica anterior. En el reto anterior vimos el concepto de `screaming architecture` y hoy vamos a darle esa estructura a nuestro proyecto.
 
 La idea es que, al observar la __estructura del código__, los nombres de las __carpetas__, los __módulos__ o las __clases__, sea evidente qué hace el sistema o cuál es su propósito principal.
+
+Lo primero, será borrar la carpeta de de `components`. Crearemos en su lugar una nueva carpeta en `src/` llamada `modules`, y dentro de ella una de `pokemon`. 
+
+<div align=center>
+    <img src="./capturas/Reto-2/1.png">
+</div>
+
+Dentro de la carpeta de `pokemon` vamos a tener todos los __archivos__ que estén __relacionados con nuestro juego__ de `pokemon`. La mayor parte de nuestro código irá dentro de esta carpeta.
+
+Creamos una nueva carpeta llamada `composables`, 
+
+> __Pregunta 1__: ¿qué es un `composable` en __VueJS__ y cual es la nomenclatura común que se utiliza en los ficheros que contiene?
+
+> Es un patrón con una de las novedades más interesantes que nos trae la API de Composición de Vue 3. Nos permite usar la reactividad fuera de componentes, de forma sencilla. 
+
+También creamos una nueva carpeta llamada `components` y otra llamada `views`
+
+<div align=center>
+    <img src="./capturas/Reto-2/2.png">
+</div>
+
+Dentro de la carpeta de `views`, vamos a crear el archivo __PokemonGame.vue__
+
+> __Pregunta 2__: ¿cuál crees que será la lógica que irá dentro de este archivo?
+
+> La lógica de juego, todo el funcionamiento de elección del pokemon, selección del pokemon aleatorio, aleatoriedad de las respuestas
+
