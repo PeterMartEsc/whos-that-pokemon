@@ -12,6 +12,8 @@ La aplicación la realizaremos en Vue, con el template de TypeScript. Usaremos C
 
 - [Reto 2 - Estructura de la Aplicación](#r2)
 
+    - [Editando el Codigo](#r2-editando)
+
 ### Reto 1 - Iniciando Proyecto Pokemon Game <a name="r1"></a>
 
 <div align=center>
@@ -169,5 +171,49 @@ Dentro de la carpeta de `views`, vamos a crear el archivo __PokemonGame.vue__
 
 > __Pregunta 2__: ¿cuál crees que será la lógica que irá dentro de este archivo?
 
-> La lógica de juego, todo el funcionamiento de elección del pokemon, selección del pokemon aleatorio, aleatoriedad de las respuestas
+> La parte visual de la aplicación, toda la logica de lo que se muestra. En el resto de carpetas irá el resto de la lógica. Elección, pokemon random, etc
 
+Generamos toda la estructura base de vue dentro
+
+<img src="./capturas/Reto-2/3.png">
+
+> __Pregunta 3__: ¿Conoces algún atajo para generar esta estructura de forma automática? ¿Con qué extensión y cuál?
+
+> Si, la extensión [Vue VSCode Snippets](https://marketplace.visualstudio.com/items?itemName=sdras.vue-vscode-snippets)
+
+#### Editando PokemonGame <a name="r2-editando"></a>
+
+Usando la etiqueta `<section>` de HTML, vamos a dividir nuestro template. En la primera sección tendremos dos mensajes que indica al usuario _Espere por favor_ y _Cargando Pokémons_
+
+<img src="./capturas/Reto-2/4.1.png">
+
+> __Pregunta 4.1__: ¿Para que sirven las clases añadidas?
+
+> La etiqueta `<section>` tiene un __flex__ y __flex-col__ que le dan el display de flex y la disposición de columna. El __justify-center__ se alinea en el centro del eje principal (en este caso __en columna__) __items-center__ alinea lo que contiene en centro del espacio que contiene. Finalmente __w-screen__ y __h-screen__ establecen el ancho y alto del elemento al maximo de la ventana gráfica.
+
+> La etiqueta `<h1>` tiene un __text-3xl__, que establece el texto al tamaño 3xl (que será como el xl 3 veces), y la `<h3>` un __animate-pulse__, lo que le da un efecto de "pulse" pre establecido por __TailWind__
+
+
+Luego de crear, lo importamos en `App.tsx`, y debería verse así:
+
+<img src="./capturas/Reto-2/4.2.png">
+
+> __Pregunta 4.2__: ¿Como ocultaríamos esta sección por completo usando una directiva de __VueJS__?
+
+> Con __v-show=false__ ocultaríamos el elemento deseado.
+
+Ahora crearemos otra sección que diga el mensaje de _¿Cuál es este Pokémon?_
+
+En esta sección añadiremos dos componentes: Pokemon Picture y Pokemon Options 
+
+> __Pregunta 4.3__: ¿para qué crees que sirven?
+
+> Sirven para la lógica de la imagen del pokemon aleatorio y las opciones de elección de pokemon.
+
+<img src="./capturas/Reto-2/4.3.png">
+
+Y con esto, terminamos el reto 2 correctamente.
+
+<div align=center>
+    <img src="./capturas/others/kenny.jpg" width="100">
+</div>

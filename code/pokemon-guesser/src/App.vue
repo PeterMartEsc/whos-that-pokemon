@@ -1,25 +1,20 @@
-<script lang="ts">
-  import { defineComponent } from 'vue'
-
-export default defineComponent({
-
-  data() {
-    let message = "Hello World";
-    return {
-      message,
-    }
-  },
-
-})
-</script>
-
 <template>
 
-  <h1 className="text-3xl font-bold underline">
-    {{ message }}
-  </h1>
+  <PokemonGame/>
 
 </template>
+
+<script lang="ts">
+  import { defineComponent } from 'vue'
+  import PokemonGame from './modules/pokemon/view/PokemonGame.vue';
+  export default defineComponent({
+
+    components: {
+      PokemonGame,
+    }
+
+  })
+</script>
 
 <style scoped>
 
