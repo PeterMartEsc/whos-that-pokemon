@@ -14,6 +14,14 @@ La aplicación la realizaremos en Vue, con el template de TypeScript. Usaremos C
 
     - [Editando el Codigo](#r2-editando)
 
+- [Reto 3 - Creando el esqueleto de Pokemon Game](#r3)
+
+    - [PokemonPickture.vue](#popi)
+
+    - [PokemonOptions.vue](#po)
+
+
+
 ### Reto 1 - Iniciando Proyecto Pokemon Game <a name="r1"></a>
 
 <div align=center>
@@ -217,3 +225,46 @@ Y con esto, terminamos el reto 2 correctamente.
 <div align=center>
     <img src="./capturas/others/kenny.jpg" width="100">
 </div>
+
+### Reto 3 - Creando el esqueleto de Pokemon Game <a name="r3"></a>
+
+<div align=center>
+    <img src="./capturas/others/rayquaza.gif" width="100">
+    <img src="./capturas/others/volcarona-maxi.gif" width="100">
+    <img src="./capturas/others/zekrom.gif" width="100">
+</div>
+
+El objetivo de este reto es generar un "esqueleto" de cómo queremos que se visualicen los elementos en nuestro juego. Es decir, lo que conocemos como un mockup, pero esta vez programando.
+
+Al acabar el reto, querremos tener algo parecido a esto:
+
+<div align=center>
+    <img src="./capturas/Reto-3/objetivo-r3.png">
+</div>
+
+#### PokemonPicture.vue <a name="popi"></a>
+
+En este componente vamos a importar directamente, desde PokeApi, una imagen de un pokemon (Ditto para ser más exactos).
+
+Siguiendo la misma forma que en PokemonGame.vue de las secciones, en este componente nos crearemos una sección que contendrá una imagen del pokemon Ditto. (No es necesario realizar la conexión directamente a la API, copia y pega la url de la imagen y muéstrala).
+
+<div align=center>
+    <img src="./capturas/Reto-3/1.1.png">
+</div>
+
+<div align=center>
+    <img src="./capturas/Reto-3/1.2.png">
+</div>
+
+Ahora añadimos la clase de Tailwind CSS llamada `brightness-0` y la clase h-[200px]
+
+> __Pregtunta 1__: ¿para qué sirve la clase __h-[200px]__?
+
+Establece la altura a 200px
+
+<div align=center>
+    <img src="./capturas/Reto-3/2.1.png">
+</div>
+
+#### PokemonOptions.vue <a name="po"></a>
+

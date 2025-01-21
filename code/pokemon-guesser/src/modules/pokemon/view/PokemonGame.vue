@@ -8,8 +8,7 @@
 
   <section class="flex flex-col justify-center items-center w-screen h-screen">
     <h1>¿Cual es este Pokémon?</h1>
-
-    <!-- Pokemon Picture -->
+    <PokemonPicture/>
     <!-- Pokemon Options -->
 
   </section>
@@ -18,6 +17,7 @@
 
 <script lang="ts">
   import { defineComponent } from 'vue'
+  import PokemonPicture from '../components/PokemonPicture.vue';
 
   export default defineComponent({
 
@@ -26,6 +26,9 @@
     data() {
 
     },
+    components: {
+      PokemonPicture,
+    }
 
 })
 </script>
