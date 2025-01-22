@@ -7,7 +7,11 @@ export default {
     "./src/modules/pokemon/components/*",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'pkm-grey': '#f1f1f1',
+      },
+    },
   },
   plugins: [],
 }

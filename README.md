@@ -268,3 +268,33 @@ Establece la altura a 200px
 
 #### PokemonOptions.vue <a name="po"></a>
 
+A continuación simularemos las opciones de los Pokemon. Esto lo haremos con una lista de HTML, y nos quedará de la siguiente forma:
+
+<div align=center>
+    <img src="./capturas/Reto-3/3.1.png">
+</div>
+
+Finalmente, le daremos estilo a los elementos de la lista, para que se vea como un botón. Luego de darle `#f1f1f1` de color de fondo, se debería ver así:
+
+<div align=center>
+    <img src="./capturas/Reto-3/3.2.png">
+</div>
+
+Y con esto, terminamos la práctica 3
+
+<div align=center>
+    <img src="./capturas/others/cartman.gif" width="300">
+</div>
+
+_(Cartman despide la pratica hoy, Kenny sufrió un accidente)_
+
+### Reto 4 - Conectando la API usando Axios <a name="r4"></a>
+
+<div align=center>
+    <img src="./capturas/others/tornadus-incarnate.png" width="100">
+    <img src="./capturas/others/landorus-incarnate.png" width="90">
+    <img src="./capturas/others/thundurus-incarnate.png" width="100">
+</div>
+
+Para realizar el __Reto 4__, tenemos que tener el codigo base medianamente parecido al de la profesora. Luego de comparar y arreglar algún detalle, continuamos de la siguiente forma
+

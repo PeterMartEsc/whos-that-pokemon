@@ -7,30 +7,21 @@
 
 
   <section class="flex flex-col justify-center items-center w-screen h-screen">
-    <h1>¿Cual es este Pokémon?</h1>
+    <h1 class="m-5">¿Cual es este Pokémon?</h1>
+
     <PokemonPicture/>
-    <!-- Pokemon Options -->
+    <PokemonOptions/>
 
   </section>
 
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { defineComponent } from 'vue'
   import PokemonPicture from '../components/PokemonPicture.vue';
+  import PokemonOptions from '../components/PokemonOptions.vue';
 
-  export default defineComponent({
 
-    name: 'Loading',
-
-    data() {
-
-    },
-    components: {
-      PokemonPicture,
-    }
-
-})
 </script>
 
 <style scoped>
