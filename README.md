@@ -20,6 +20,10 @@ La aplicación la realizaremos en Vue, con el template de TypeScript. Usaremos C
 
     - [PokemonOptions.vue](#po)
 
+- [Reto 4 - ](#r4)
+
+- [Reto 5 - ](#r5)
+
 
 
 ### Reto 1 - Iniciando Proyecto Pokemon Game <a name="r1"></a>
@@ -40,7 +44,9 @@ Empezaremos creando el proyecto con:
 
 Y configuramos el proyecto como queremos:
 
-<img src="./resources/Reto-1/1.png">
+<div align=center>
+    <img src="./resources/Reto-1/1.png">
+</div>
 
 > __Pregunta 1__: ¿Para qué sirve Vue Router, Pinia, Vitest, ESLint y Prettier? Responde a esta pregunta en el README del repositorio del proyecto.
 
@@ -61,8 +67,10 @@ Continuando con el codigo, procedemos a iniciar el proyecto para comprobar que f
     npm install
     npm run dev
 ```
+<div align=center>
+    <img src="./resources/Reto-1/2.png">
+</div>
 
-<img src="./resources/Reto-1/2.png">
 
 Como hemos dicho nuestro Pokemon Game lo vamos a realizar siguiendo `Composition API` y además, nuestra estructura de archivos va a estar basada en `screaming architecture`.
 
@@ -70,7 +78,9 @@ Como hemos dicho nuestro Pokemon Game lo vamos a realizar siguiendo `Composition
 
 > __Composition API__:  es una forma mejorada para realizar las aplicaciones a partir de Vue 3. Está diseñado de forma que el proyecto tenga una alta escalabilidad, es decir, que se pueda mejorar y que sus componentes sean reutilizables.
 
-<img src="./resources/Reto-1/options-api-composition-api.png">
+<div align=center>
+    <img src="./resources/Reto-1/options-api-composition-api.png">
+</div>
 
 Imagen obtenida de la web de [Manz.Dev](https://lenguajejs.com/vuejs/componentes/composition-api/)
 
@@ -96,13 +106,17 @@ A continuación borraremos y modificaremos todo lo que no necesitamos que nos ha
 
 - El contenido de App.vue. Deja la estructura básica de VueJS teniendo en cuenta que usaremos Composition API. Recuerda que vamos a utilizar TS en lugar de JS, ¿cómo se lo indicamos a Vue?
 
+<div align=center>
     <img src="./resources/Reto-1/3.png">
+</div>
 
-    Se lo indicamos cambiando el contenido de `lang` de __js__ a __ts__.
+Se lo indicamos cambiando el contenido de `lang` de __js__ a __ts__.
 
 - Añade un mensaje de Hola mundo en App.vue
 
+<div align=center>
     <img src="./resources/Reto-1/4.png">
+</div>
 
 - En la carpeta de `assets`, borra los archivos `base.css` y `logo.svg`
 
@@ -110,7 +124,9 @@ A continuación borraremos y modificaremos todo lo que no necesitamos que nos ha
 
 - Ejecuta el comando npm run dev y muestra el resultado.
 
+<div align=center>
     <img src="./resources/Reto-1/5.png">
+</div>
 
 Finalmente, configuraremos el proyecto para usar el framework de CSS __TailwindCSS__:
 
@@ -121,11 +137,15 @@ Finalmente, configuraremos el proyecto para usar el framework de CSS __TailwindC
 
 Editamos el `tailwind.config.js` para que se vea de la siguiente forma:
 
-<img src="./resources/Reto-1/tailwind-1.png">
+<div align=center>
+    <img src="./resources/Reto-1/tailwind-1.png">
+</div>
 
 Añadimos un archivo `index.css` en la ruta `pokemon-gesser/src/assets` con el siguiente contenido:
 
-<img src="./resources/Reto-1/tailwind-2.png">
+<div align=center>
+    <img src="./resources/Reto-1/tailwind-2.png">
+<div >
 
 Añadimos un classname al componente de `hello world` de la siguiente forma: 
 
@@ -183,7 +203,9 @@ Dentro de la carpeta de `views`, vamos a crear el archivo __PokemonGame.vue__
 
 Generamos toda la estructura base de vue dentro
 
-<img src="./resources/Reto-2/3.png">
+<div align=center>
+    <img src="./resources/Reto-2/3.png">
+</div>
 
 > __Pregunta 3__: ¿Conoces algún atajo para generar esta estructura de forma automática? ¿Con qué extensión y cuál?
 
@@ -193,7 +215,9 @@ Generamos toda la estructura base de vue dentro
 
 Usando la etiqueta `<section>` de HTML, vamos a dividir nuestro template. En la primera sección tendremos dos mensajes que indica al usuario _Espere por favor_ y _Cargando Pokémons_
 
-<img src="./resources/Reto-2/4.1.png">
+<div align=center>
+    <img src="./resources/Reto-2/4.1.png">
+</div>
 
 > __Pregunta 4.1__: ¿Para que sirven las clases añadidas?
 
@@ -204,7 +228,9 @@ Usando la etiqueta `<section>` de HTML, vamos a dividir nuestro template. En la 
 
 Luego de crear, lo importamos en `App.tsx`, y debería verse así:
 
-<img src="./resources/Reto-2/4.2.png">
+<div align=center>
+    <img src="./resources/Reto-2/4.2.png">
+</div>
 
 > __Pregunta 4.2__: ¿Como ocultaríamos esta sección por completo usando una directiva de __VueJS__?
 
@@ -354,4 +380,53 @@ En `usePokemonGame.ts` lo que tenemos que hacer ahora es obtener esa informació
     <img src="./resources/Reto-4/2.5.png">
 </div>
 
-Comprueba que funciona  y muestra el resultado de la consola de la aplicación importando nuestro composable en el componente de PokemonGame.vue de la siguiente forma: 
+Comprobamos que funciona y mostramos el resultado de la consola de la aplicación importando nuestro __composable__ en el componente de `PokemonGame.vue` de la siguiente forma: 
+
+<div align=center>
+    <img src="./resources/Reto-4/2.6.png">
+</div>
+
+Los datos que hemos obtenido no son técnicamente los que nos interesan, ya que solo necesitamos el __id__ y el __nombre__ de los __Pokemon__. Por tanto, lo que vamos a hacer es crear un __tipado estricto__ para que podamos tipar los resultados de las peticiones __HTTP__ que hagamos a la _API_ de __Pokemon__. 
+
+Para ello:
+
+- Abre Postman.
+
+- Realiza una petición a PokeApi (no importa cuantos pokemon recuperes, puedes poner por ejemplo 1000). 
+
+- Copia el código de la respuesta.
+
+- Vuelve a Visual Studio y dentro de la carpeta de interfaces crea un archivo llamado pokemon-list.response.ts.
+
+- Usa la extensión de Paste JSON as Code y ponle a nivel superior (PokemonListResponse) y dale a enter. De esta manera tenemos guardados los resultados de nuestra petición.
+
+<div align=center>
+    <img src="./resources/Reto-4/3.1.png">
+</div>
+
+- Exporta este nuevo archivo en nuestro archivo de barril.
+
+<div align=center>
+    <img src="./resources/Reto-4/3.2.png">
+</div>
+
+- Modifica el archivo `pokemonApi.ts` de la siguiente manera: 
+
+<div align=center>
+    <img src="./resources/Reto-4/3.3.png">
+</div>
+
+- Ahora en `response.data` vamos a tener toda la información de la petición:
+
+<div align=center>
+    <img src="./resources/Reto-4/3.4.png">
+</div>
+
+Y con esto ya tendríamos el __Reto 4__
+
+<div align=center>
+    <img src="./resources/others/kenny.jpg" width="100">
+</div>
+
+_(Ya está Kenny de vuelta )_
+

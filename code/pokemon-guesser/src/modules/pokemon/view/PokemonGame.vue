@@ -12,8 +12,6 @@
     <PokemonPicture/>
     <PokemonOptions/>
 
-    
-
   </section>
 
 </template>
