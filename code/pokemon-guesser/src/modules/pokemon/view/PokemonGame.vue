@@ -12,15 +12,18 @@
     <PokemonPicture/>
     <PokemonOptions/>
 
+    
+
   </section>
 
 </template>
 
 <script setup lang="ts">
-  import { defineComponent } from 'vue'
   import PokemonPicture from '../components/PokemonPicture.vue';
   import PokemonOptions from '../components/PokemonOptions.vue';
+  import { usePokemonGame } from '../composables/usePokemonGame';
 
+  const {gameStatus} = usePokemonGame();
 
 </script>
 

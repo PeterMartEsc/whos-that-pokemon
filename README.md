@@ -340,7 +340,18 @@ Ahora, vamos a conectarnos con nuestra __PokeApi__ para poder recuperar una list
 
 Dentro de la carpeta de pokemon creamos una nueva llamada __api__ y crea un archivo `pokemonApi.ts.` 
 
-Instalamos __axios__ en el proyecto y dentro del archivo que acabamos de crear, usa __axios__ para realizar la conexión con `PokeApi`.
+Instalamos __axios__ en el proyecto y dentro del archivo que acabamos de crear, usa __axios__ para realizar la conexión con [Pokemon Api]().
+
+<div align=center>
+    <img src="./resources/Reto-4/2.4.png">
+</div>
 
 Lo exportamos y guardamos los cambios.
 
+En `usePokemonGame.ts` lo que tenemos que hacer ahora es obtener esa información sobre los 151 pokemon. Para ello:
+
+<div align=center>
+    <img src="./resources/Reto-4/2.5.png">
+</div>
+
+Comprueba que funciona  y muestra el resultado de la consola de la aplicación importando nuestro composable en el componente de PokemonGame.vue de la siguiente forma: 
