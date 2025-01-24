@@ -145,7 +145,7 @@ Añadimos un archivo `index.css` en la ruta `pokemon-gesser/src/assets` con el s
 
 <div align=center>
     <img src="./resources/Reto-1/tailwind-2.png">
-<div >
+</div>
 
 Añadimos un classname al componente de `hello world` de la siguiente forma: 
 
@@ -244,7 +244,9 @@ En esta sección añadiremos dos componentes: Pokemon Picture y Pokemon Options
 
 > Sirven para la lógica de la imagen del pokemon aleatorio y las opciones de elección de pokemon.
 
-<img src="./resources/Reto-2/4.3.png">
+<div align=center>
+    <img src="./resources/Reto-2/4.3.png">
+</div>
 
 Y con esto, terminamos el reto 2 correctamente.
 
