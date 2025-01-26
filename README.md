@@ -22,7 +22,11 @@ La aplicación la realizaremos en Vue, con el template de TypeScript. Usaremos C
 
 - [Reto 4 - Conectando la API usando Axios](#r4)
 
-- [Reto 5 - ](#r5)
+- [Reto 5 - Modificando método getPokemons()](#r5)
+
+    - [Modificando getPokemons()](#r5-modf-getPokemon)
+
+    - [Modificando el orden de los Pokemons](#r5-modf-ord)
 
 
 
@@ -435,9 +439,15 @@ _(Ya está Kenny de vuelta )_
 
 ### Reto 5 - Modificando método getPokemons() <a name="r5"></a>
 
+<div align=center>
+    <img src="./resources/others/tornadus-incarnate.png" width="100">
+    <img src="./resources/others/landorus-incarnate.png" width="90">
+    <img src="./resources/others/thundurus-incarnate.png" width="100">
+</div>
+
 En el reto anterior, habíamos conectado ya nuestra app de Vue con PokeApi usando Axios. Sin embargo, comentamos que de la respuesta que obteníamos  solo nos interesaba saber el `id` y el `nombre` del __pokemon__.
 
-#### Modificando el getPokemons 
+#### Modificando el getPokemons <a name="r5-modf-getPokemon"></a>
 
 Vamos a modificar el método `getPokemons` que hemos creado en el archivo `usePokemonGame.ts` para quedarnos solo con el nombre y el id de la respuesta.
 
@@ -479,7 +489,7 @@ Lo que nos devuelve:
 
 _(Nota: en la captura solo se ven los primeros 99 elementos ya que el array está dividido en dos desplegables al mostrarlos en el console log, debido a su tamaño)_
 
-#### Modificando el orden de los pokemon obtenidos
+#### Modificando el orden de los pokemon obtenidos <a name="r5-modf-ord"></a>
 
 El __resultado__ ahora nos muestra una lista de los __151 pokemons__ ordenados según su `id`. Nosotros __NO__ queremos que estén ordenados, por tanto vamos a hacer que nuestra lista nos la devuelva de forma aleatoria.
 
