@@ -20,7 +20,7 @@ La aplicación la realizaremos en Vue, con el template de TypeScript. Usaremos C
 
     - [PokemonOptions.vue](#po)
 
-- [Reto 4 - ](#r4)
+- [Reto 4 - Conectando la API usando Axios](#r4)
 
 - [Reto 5 - ](#r5)
 
@@ -412,7 +412,7 @@ Para ello:
     <img src="./resources/Reto-4/3.2.png">
 </div>
 
-- Modifica el archivo `pokemonApi.ts` de la siguiente manera: 
+- Modificamos el archivo `pokemonApi.ts` de la siguiente manera: 
 
 <div align=center>
     <img src="./resources/Reto-4/3.3.png">
@@ -431,4 +431,71 @@ Y con esto ya tendríamos el __Reto 4__
 </div>
 
 _(Ya está Kenny de vuelta )_
+
+
+### Reto 5 - Modificando método getPokemons() <a name="r5"></a>
+
+En el reto anterior, habíamos conectado ya nuestra app de Vue con PokeApi usando Axios. Sin embargo, comentamos que de la respuesta que obteníamos  solo nos interesaba saber el `id` y el `nombre` del __pokemon__.
+
+#### Modificando el getPokemons 
+
+Vamos a modificar el método `getPokemons` que hemos creado en el archivo `usePokemonGame.ts` para quedarnos solo con el nombre y el id de la respuesta.
+
+Vamos a crear un nuevo archivo dentro de la carpeta __interfaces__ que se va a llamar `pokemon.interface.ts` y crea una __interfaz__ para __Pokemon__ que contenga el __id__ de tipo `number` y __name__ de tipo `string`.
+
+<div align=center>
+    <img src="./resources/Reto-5/1.1.png">
+</div>
+
+Lo __exportamos__ de la misma forma que hemos hecho con los archivos hasta ahora. Luego volvemos a `usePokemonGame.ts` e __importamos__ la __interfaz__ que acabamos de crear:
+
+<div align=center>
+    <img src="./resources/Reto-5/1.2.png">
+</div>
+
+Modificamos el método getPokemons de la siguiente forma:
+
+<div align=center>
+    <img src="./resources/Reto-5/1.3.png">
+</div>
+
+> ¿Qué es lo que estamos haciendo? ¿Para qué sirve la línea de código: const id = urlParts[urlParts.length - 2] ?? 0;?
+
+> Estamos codgiendo cada elemento pokemon que devuelve la api, tomando su campo url y dividiendola utilizando como separador el elemento _' / '_. Esto nos devuelve un array de las partes divididas, del cual cogemos la penúltima posición del array _(length -2, es decir, el id del pokemon)_ y el _' ?? 0 '_ indica que si ese elemento es _null_ o _undefined_, ponga un 0. 
+
+> Dato: el id: +id tiene como propósito convertir el id a tipo number, es un operador unario.
+
+Ahora llamaremos a nuestro método modificando el `onMounted()` que habíamos creado anteriormente de la siguiente manera:
+
+<div align=center>
+    <img src="./resources/Reto-5/1.4.png">
+</div>
+
+Lo que nos devuelve:
+
+<div align=center>
+    <img src="./resources/Reto-5/1.5.png">
+</div>
+
+_(Nota: en la captura solo se ven los primeros 99 elementos ya que el array está dividido en dos desplegables al mostrarlos en el console log, debido a su tamaño)_
+
+#### Modificando el orden de los pokemon obtenidos
+
+El __resultado__ ahora nos muestra una lista de los __151 pokemons__ ordenados según su `id`. Nosotros __NO__ queremos que estén ordenados, por tanto vamos a hacer que nuestra lista nos la devuelva de forma aleatoria.
+
+Modificamos el __return__ del método `getPokemons` usando la función `sort` de __javascript__, junto con `Math.random()` para devolver la __lista de Pokemons__ desordenada:
+
+<div align=center>
+    <img src="./resources/Reto-5/2.1.png">
+</div>
+
+<div align=center>
+    <img src="./resources/Reto-5/2.2.png">
+</div>
+
+Al hacer esto, hemos terminado con el Reto 5
+
+<div align=center>
+    <img src="./resources/others/kenny-dance.gif" width="100">
+</div>
 
