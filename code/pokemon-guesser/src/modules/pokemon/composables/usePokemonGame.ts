@@ -1,9 +1,12 @@
-import { onMounted, ref } from "vue"
+import { computed, onMounted, ref } from "vue"
 import { GameStatus, type PokemonListResponse, type Pokemon} from "@/modules/pokemon/interfaces"
 import { PokemonApi } from "@/modules/pokemon/api/pokemonApi";
 
 export const usePokemonGame = () => {
   const gameStatus = ref<GameStatus>( GameStatus.Playing );
+  const pokemons = ref<Pokemon[]>([]);
+
+  const isLoading = computed(()=> pokemons.value.length == 0);
 
   const getPokemons = async () : Promise<Pokemon[]> => {
     const pokemonApi = new PokemonApi();
@@ -24,12 +27,13 @@ export const usePokemonGame = () => {
     return pokemonsUnsorted;
   }
 
-  onMounted(() => {
-    const pokemons = getPokemons();
-    console.log(pokemons);
+  onMounted(async () => {
+    pokemons.value = await getPokemons();
+    //console.log(pokemons);
   });
 
   return {
     gameStatus,
+    isLoading,
   }
 }

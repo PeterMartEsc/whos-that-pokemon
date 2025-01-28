@@ -509,3 +509,28 @@ Al hacer esto, hemos terminado con el Reto 5
     <img src="./resources/others/kenny-dance.gif" width="100">
 </div>
 
+### Reto 6 - Final <a name="r6"></a>
+
+Este será el __ultimo__ reto de la tarea. Retomamos el trabajo realizado al final del __reto anterior__, donde conseguíamos obtener una __lista de pokemons aleatorios__.
+
+Para continuar, lo que debemos hacer es poder determinar varias __propiedades computadas__ que vamos a necesitas, por ejemplo cuándo nuestra página está cargando. 
+
+Hay un momento en la __petición HTTP__ está trayendo la información, por tanto, podemos crear una __propiedad computada__ para que se __cambie automáticamente__. 
+
+> ¿Qué es una propiedad computada?
+
+> Es la posibilidad de tener propiedades cuyo valor irá variando en tiempo de ejecución.
+
+En usePokemonGame.ts creamos una nueva __propiedad computada__ llamada `isLoading` de la siguiente forma:
+
+<div align=center>
+    <img src="./resources/Reto-6/1.1.png">
+</div>
+
+<div align=center>
+    <img src="./resources/Reto-6/1.2.png">
+</div>
+
+Lo que estamos haciendo aquí es determinar si el __array de Pokemon__ está o no __vacío__, de tal forma que podamos mostrar o no cierta información en base a ello, como por ejemplo:
+
+Mostrar en `PokemonGame.vue` el mensaje de "Espere por favor" y "Cargando Pokemons":
