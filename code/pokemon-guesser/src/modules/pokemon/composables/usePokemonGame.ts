@@ -5,13 +5,14 @@ import { PokemonApi } from "@/modules/pokemon/api/pokemonApi";
 export const usePokemonGame = () => {
   const gameStatus = ref<GameStatus>( GameStatus.Playing );
   const pokemons = ref<Pokemon[]>([]);
+  const pokemonOptions = ref<Pokemon[]>([]);
 
   const isLoading = computed(()=> pokemons.value.length == 0);
 
   const getPokemons = async () : Promise<Pokemon[]> => {
     const pokemonApi = new PokemonApi();
     const response = await pokemonApi.get('/?limit=151');
-    //console.log(response.results);
+
     const pokemonsArray = response.results.map(pokemon => {
       const urlParts = pokemon.url.split('/');
       const id = urlParts[urlParts.length - 2] ?? 0;
@@ -27,13 +28,26 @@ export const usePokemonGame = () => {
     return pokemonsUnsorted;
   }
 
+  const getNextOptions = (howMany: number = 4) => {
+    gameStatus.value = GameStatus.Playing;
+    pokemonOptions.value = pokemons.value.slice(0, howMany);
+    pokemons.value = pokemons.value.slice(howMany);
+  }
+
   onMounted(async () => {
+    //setTimeout(async () => {
     pokemons.value = await getPokemons();
+    //}, 1000);
     //console.log(pokemons);
+    getNextOptions();
   });
 
   return {
     gameStatus,
     isLoading,
+    pokemonOptions,
+
+    //Methods
+    getNextOptions,
   }
 }

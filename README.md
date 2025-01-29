@@ -534,3 +534,43 @@ En usePokemonGame.ts creamos una nueva __propiedad computada__ llamada `isLoadin
 Lo que estamos haciendo aquí es determinar si el __array de Pokemon__ está o no __vacío__, de tal forma que podamos mostrar o no cierta información en base a ello, como por ejemplo:
 
 Mostrar en `PokemonGame.vue` el mensaje de "Espere por favor" y "Cargando Pokemons":
+
+<div align=center>
+    <img src="./resources/Reto-6/1.3.png">
+</div>
+
+Al probar lo anterior, notamos que el cambio es prácticamente imperceptible, por lo que vamos a añadir una promesa en `onMounted()` del archivo `usePokemonGame` usando la función `setTimeout` para que al cargar la respuesta, tarde __1000 milésimas__ de segundo:
+
+<div align=center>
+    <img src="./resources/Reto-6/2.1.png">
+</div>
+
+Una vez realizado esto, lo borramos, ya que no lo necesitaremos.
+
+<div align=center>
+    <img src="./resources/others/duck-classic.gif" width="80">
+</div>
+
+Ahora vamos a crear otra propiedad reactiva a la que vamos a llamar `pokemonOptions`:
+
+<div align=center>
+    <img src="./resources/Reto-6/3.1.png">
+</div>
+
+Estos `pokemonOption` van a ser las opciones de los __Pokemons__ que vamos a mostrar, y por tanto, tenemos que crear una nueva función para manejarlas:
+
+<div align=center>
+    <img src="./resources/Reto-6/3.2.png">
+</div>
+
+> ¿Cómo funciona este fragmento de código? 
+
+> Primero creamos un pokemonOptions de tipo lista de Pokemon. Luego, en getNextOptions, copiamos los primeros 4 elementos del array (el método slice copia parte de un array, en este caso desde la posición 0 a la 4 que es la marcada como máxima), y luego
+
+
+
+
+
+
+
+Muestra por consola `pokemonOptions.value` para comprobar que efectivamente nos está devolviendo __4 pokemons__ como propiedades reactivas.
